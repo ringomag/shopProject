@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Subcategories</h1>
+<ul class="list-group list-group-horizontal">
+    {% for subcategory in categoryChild %}
+    <a href="/categories/{{category.id}}/{{subcategory.id}}"><li class="list-group-item" id="{{subcategory.id}}">{{ subcategory.subcategoryName }}</li></a>
+    {% endfor %}
+</ul>
+
+<hr>
+
+
+
+
+
+{% endblock %}
