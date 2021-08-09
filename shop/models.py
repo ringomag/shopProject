@@ -10,7 +10,7 @@ class Customer(models.Model):
     phone = models.IntegerField()
 
     def __str__(self):
-        return self.firstName + self.lastName
+        return self.firstName +' '+ self.lastName
 
 class Category(models.Model):
     categoryName = models.CharField(max_length=50)

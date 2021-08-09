@@ -23,4 +23,11 @@ def subcategoryList(request, pk, sk):
     return render(request, 'subcategories.html', {"category":category, "subcategory":subcategory, "subcategoryChild":subcategoryChild})
 
 def customerProducts(request):
-    return render(request, 'customerProducts.html', {})
+    customers = Customer.objects.all()
+    return render(request, 'customerProducts.html', {"customers":customers})
+
+def order_details(request, pk):
+    customers = Customer.objects.get(id=pk)
+    orders = customers.order_set.all()
+    orders_count = orders.count()
+    return render(request, 'orderDetails.html', {"customers":customers, "orders":orders, "orders_count":orders_count})

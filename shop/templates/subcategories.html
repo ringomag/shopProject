@@ -3,7 +3,7 @@
 
 {% block content %}
 <h1>Products</h1>
-<ul class="list-group list-group-horizontal">
+<ul class="list-group">
     {% for product in subcategoryChild %}
     <li class="list-group-item" id="{{product.id}}">{{ product.productName }}</li>
     {% endfor %}

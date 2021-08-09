@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<h1>Orders</h1>
+<hr>
+<h2>Total orders =  {{orders_count}}</h2>
+<hr>
+<ul class="list-group">
+    {% for order in orders %}
+    <li class="list-group-item">{{order.product}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
